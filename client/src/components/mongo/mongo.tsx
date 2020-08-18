@@ -12,7 +12,7 @@ const exampleJSON = JSON.stringify({
 }, undefined, 4);
 
 function MongoInsert(data: any) {
-    return fetch('http://localhost:8080/posts/mongo', {
+    return fetch(`${process.env.REACT_APP_API_HOST}/posts/mongo`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -30,7 +30,7 @@ export default function Mongo(props: any) {
     const codeRef = useRef('{}');
 
     function getPosts() {
-        fetch('http://localhost:8080/posts/mongo').then(async result => {
+        fetch(`${process.env.REACT_APP_API_HOST}/posts/mongo`).then(async result => {
             if (result.ok) {
                 let resultPosts = await result.json();
                 setPosts(resultPosts.reverse());

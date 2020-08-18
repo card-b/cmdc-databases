@@ -11,7 +11,7 @@ interface PostForm extends HTMLFormElement {
 }
 
 function MySqlInsert(data: any) {
-    return fetch('http://localhost:8080/posts/mysql', {
+    return fetch(`${process.env.REACT_APP_API_HOST}/posts/mysql`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -27,7 +27,7 @@ export default function MySql(props: any) {
     const [error, setError] = useState<any>(null);
 
     function getPosts() {
-        fetch('http://localhost:8080/posts/mysql').then(async result => {
+        fetch(`${process.env.REACT_APP_API_HOST}/posts/mysql`).then(async result => {
             if (result.ok) {
                 let resultPosts = await result.json();
                 setPosts(resultPosts);

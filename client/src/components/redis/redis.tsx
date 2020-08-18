@@ -13,7 +13,7 @@ const exampleJSON = JSON.stringify({
 }, undefined, 4);
 
 function RedisInsert(key: any, value: any) {
-    return fetch('http://localhost:8080/posts/redis', {
+    return fetch(`${process.env.REACT_APP_API_HOST}/posts/redis`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -32,7 +32,7 @@ export default function Mongo(props: any) {
     const keyInput = useRef<HTMLInputElement | null>(null);
 
     function getPosts() {
-        fetch('http://localhost:8080/posts/redis').then(async result => {
+        fetch(`${process.env.REACT_APP_API_HOST}/posts/redis`).then(async result => {
             if (result.ok) {
                 let resultPosts = await result.json();
 
