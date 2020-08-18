@@ -1,0 +1,113 @@
+body {
+    background-color: #333;
+}
+
+header {
+    color: #fff;
+    font-weight: bold;
+    height: 50px;
+    position: relative;
+
+    nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 50px;
+        display: flex;
+        align-items: center;
+
+        a {
+            display: inline-block;
+            margin: 0 40px;
+            color: #fff;
+        }
+    }
+}
+
+.page-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #333;
+    max-width: 1200px;
+    margin: auto;
+
+    .page-left {
+        padding: 15px;
+        background-color: #fff;
+        margin: 15px;
+        border-radius: 10px;
+        max-width: 600px;
+        overflow-x: auto;
+    }
+
+    .page-right {
+        padding: 15px;
+        margin: 15px;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+}
+
+.post-wrapper {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    p {
+        padding: 40px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        background: #eee;
+        box-shadow: 0 5px 15px -10px rgba(0,0,0,0.5);
+    }
+
+    &.error {
+        border: 1px solid red;
+        background: rgba(255, 0, 0, 0.2);
+        padding: 15px;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    padding: 15px;
+    max-width: 500px;
+    margin: auto;
+    border: 1px solid #ddd;
+    background-color: #eee;
+    border-radius: 6px;
+
+    input, textarea {
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        padding: 9px 6px;
+        display: block;
+        border-radius: 6px;
+    }
+
+    input[type="submit"] {
+        background: green;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 6px;
+    }
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+button {
+    padding: 9px 6px;
+    width: 100%;
+    background: green;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    margin-top: 15px;
+}
